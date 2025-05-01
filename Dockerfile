@@ -1,4 +1,4 @@
-FROM node:22-bookworm
+FROM node:21-bookworm-slim
 
 RUN deluser node && \
     mkdir -p /opt/foundryvtt/resources/app && \
