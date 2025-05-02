@@ -8,8 +8,6 @@ RUN mkdir -p /opt/foundryvtt/resources/app && \
     adduser --disabled-password fvtt && \
     chown fvtt:fvtt /opt/foundryvtt && \
     chown fvtt:fvtt /data/foundryvtt && \
-    chown node:node /opt/foundryvtt && \
-    chown node:node /data/foundryvtt && \
     chmod g+s+rwx /opt/foundryvtt && \
     chmod g+s+rwx /data/foundryvtt
 USER fvtt
@@ -21,8 +19,6 @@ RUN chmod +x /opt/foundryvtt/run-server.sh
 USER root
 RUN chown -R fvtt:fvtt /data/foundryvtt && \
     chown -R fvtt:fvtt /opt/foundryvtt/resources && \
-    chown -R node:node /data/foundryvtt && \
-    chown -R node:node /opt/foundryvtt/resources && \
     chmod -R g+s+rwx /data/foundryvtt && \
     chmod -R g+s+rwx /opt/foundryvtt/resources && \
     chmod -R g+s+rwx /opt/foundryvtt/resources/app
@@ -33,6 +29,6 @@ VOLUME /host
 VOLUME /opt/foundryvtt/resources/app
 EXPOSE 30000
 
-USER node
+USER root
 ENTRYPOINT ["/opt/foundryvtt/run-server.sh"]
 CMD ["resources/app/main.mjs", "--port=30000", "--dataPath=/data/foundryvtt"]
