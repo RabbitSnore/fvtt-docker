@@ -2,7 +2,7 @@ FROM node:21-alpine
 
 # Run server
 
-RUN 
+RUN deluser node && \
     mkdir -p /opt/foundryvtt/resources/app && \
     mkdir /data && \
     mkdir /data/foundryvtt && \
