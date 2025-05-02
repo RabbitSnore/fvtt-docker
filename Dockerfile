@@ -2,7 +2,8 @@ FROM node:21-alpine
 
 # Run server
 
-RUN mkdir -p /opt/foundryvtt/resources/app && \
+RUN deluser node && \
+    mkdir -p /opt/foundryvtt/resources/app && \
     mkdir /data && \
     mkdir /data/foundryvtt && \
     adduser --disabled-password fvtt && \
@@ -29,6 +30,4 @@ VOLUME /host
 VOLUME /opt/foundryvtt/resources/app
 EXPOSE 30000
 
-USER fvtt
-ENTRYPOINT ["/opt/foundryvtt/run-server.sh"]
-CMD ["resources/app/main.mjs", "--port=30000", "--dataPath=/data/foundryvtt"]
+ENTRYPOINT /opt/foundryvtt/run-server.sh
