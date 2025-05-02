@@ -6,3 +6,6 @@ foundryvtt*.zip
 
 # Docker Compose
 docker-compose.local.yaml
+.Rproj.user
+*Rhistory
+*Rproj
