@@ -29,6 +29,6 @@ VOLUME /host
 VOLUME /opt/foundryvtt/resources/app
 EXPOSE 30000
 
-USER root
+USER fvtt
 ENTRYPOINT ["/opt/foundryvtt/run-server.sh"]
 CMD ["resources/app/main.mjs", "--port=30000", "--dataPath=/data/foundryvtt"]
