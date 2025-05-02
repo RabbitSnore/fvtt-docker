@@ -1,6 +1,4 @@
-FROM alpine:3.20
-
-ENV NODE_VERSION 23.11.0
+FROM node:21-alpine
 
 RUN deluser node && \
     mkdir -p /opt/foundryvtt/resources/app && \
