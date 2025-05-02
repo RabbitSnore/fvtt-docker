@@ -1,20 +1,4 @@
-ARG NODE_IMAGE_VERSION=22-alpine
-
-FROM node:${NODE_IMAGE_VERSION} AS compile-typescript-stage
-
-WORKDIR /root
-
-COPY \
-  package.json \
-  package-lock.json \
-  tsconfig.json \
-  ./
-RUN npm install && npm install --global typescript
-COPY /src/*.ts src/
-RUN tsc
-RUN grep -l "#!" dist/*.js | xargs chmod a+x
-
-FROM node:${NODE_IMAGE_VERSION} AS optional-release-stage
+FROM node:21-alpine
 
 # Run server
 
