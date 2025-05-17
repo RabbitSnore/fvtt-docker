@@ -46,4 +46,5 @@ VOLUME /host
 VOLUME /opt/foundryvtt/resources/app
 EXPOSE 30000
 
+USER root
 ENTRYPOINT /opt/foundryvtt/run-server.sh
