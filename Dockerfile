@@ -18,9 +18,9 @@ RUN chmod +x /opt/foundryvtt/run-server.sh
 USER root
 RUN chown -R fvtt:fvtt /data/foundryvtt && \
     chown -R fvtt:fvtt /opt/foundryvtt/resources && \
-    chmod -R g+s+rwx /data/foundryvtt && \
-    chmod -R g+s+rwx /opt/foundryvtt/resources && \
-    chmod -R g+s+rwx /opt/foundryvtt/resources/app
+    chmod -R a+rwx /data/foundryvtt && \
+    chmod -R a+rwx /opt/foundryvtt/resources && \
+    chmod -R a+rwx /opt/foundryvtt/resources/app
 
 USER root
 VOLUME /data/foundryvtt
