@@ -1,6 +1,6 @@
 # FROM node:21-alpine
 
-ARG NODE_IMAGE_VERSION=22-bookworm-slim
+ARG NODE_IMAGE_VERSION=22-bookworm
 
 FROM node:${NODE_IMAGE_VERSION} AS compile-typescript-stage
 
