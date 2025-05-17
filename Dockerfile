@@ -23,7 +23,6 @@ RUN deluser node && \
     mkdir /data && \
     mkdir /data/foundryvtt && \
     adduser --disabled-password fvtt && \
-    usermod -aG sudo fvtt && \
     chown fvtt:fvtt /opt/foundryvtt && \
     chown fvtt:fvtt /data/foundryvtt && \
     chmod g+s+rwx /opt/foundryvtt && \
@@ -35,7 +34,8 @@ RUN chmod +x /opt/foundryvtt/run-server.sh
 
 # Set permissions for the volumes
 USER root
-RUN chown -R fvtt:fvtt /data/foundryvtt && \
+RUN usermod -aG sudo fvtt && \
+    chown -R fvtt:fvtt /data/foundryvtt && \
     chown -R fvtt:fvtt /opt/foundryvtt/resources && \
     chmod -R g+s+rwx /data/foundryvtt && \
     chmod -R g+s+rwx /opt/foundryvtt/resources && \
