@@ -10,4 +10,4 @@ find /host -type f -name '[f,F]oundry[vtt,VTT]*.zip' -exec cp '{}' . ';'
 echo "Unzipping..."
 unzip -o ./*.zip && rm ./*.zip
 
-node resources/app/main.mjs --dataPath=/data/foundryvtt
+node resources/app/main.mjs --dataPath=/data/foundryvtt --no-cache
