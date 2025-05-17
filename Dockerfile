@@ -1,4 +1,5 @@
 FROM --platform=linux/amd64 amd64/node:24-alpine
+
 RUN deluser node && \
     mkdir -p /opt/foundryvtt/resources/app && \
     mkdir /data && \
