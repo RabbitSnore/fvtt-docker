@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 amd64/node:24-bookworm
+FROM --platform=linux/amd64 amd64/node:24-bookworm-slim
 
 RUN deluser node && \
     mkdir -p /opt/foundryvtt/resources/app && \
