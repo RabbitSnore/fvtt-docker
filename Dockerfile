@@ -30,7 +30,7 @@ RUN deluser node && \
 USER fvtt
 
 COPY --chown=fvtt run-server.sh /opt/foundryvtt
-RUN chmod g+s+rwx /opt/foundryvtt/run-server.sh
+RUN chmod +x /opt/foundryvtt/run-server.sh
 
 # Set permissions for the volumes
 USER root
