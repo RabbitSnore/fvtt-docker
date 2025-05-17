@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 amd64/node:21-alpine
+FROM --platform=linux/amd64 amd64/node:22-bookworm-slim
 
 #ARG NODE_IMAGE_VERSION=22-bookworm-slim
 
