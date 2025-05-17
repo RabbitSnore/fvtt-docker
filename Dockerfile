@@ -1,20 +1,20 @@
-# FROM node:21-alpine
+FROM --platform=linux/amd64 amd64/node:21-alpine
 
-ARG NODE_IMAGE_VERSION=22-bookworm-slim
+#ARG NODE_IMAGE_VERSION=22-bookworm-slim
 
-FROM --platform=linux/amd64 amd64/node:${NODE_IMAGE_VERSION} AS compile-typescript-stage
+#FROM --platform=linux/amd64 amd64/node:${NODE_IMAGE_VERSION} AS compile-typescript-stage
 
-COPY \
-  package.json \
-  package-lock.json \
-  tsconfig.json \
-  ./
-RUN npm install && npm install --global typescript
-COPY /src/*.ts src/
-RUN tsc
-RUN grep -l "#!" dist/*.js | xargs chmod a+x
+#COPY \
+#  package.json \
+#  package-lock.json \
+#  tsconfig.json \
+#  ./
+#RUN npm install && npm install --global typescript
+#COPY /src/*.ts src/
+#RUN tsc
+#RUN grep -l "#!" dist/*.js | xargs chmod a+x
 
-FROM node:${NODE_IMAGE_VERSION} AS optional-release-stage
+#FROM node:${NODE_IMAGE_VERSION} AS optional-release-stage
 
 # Run server
 
