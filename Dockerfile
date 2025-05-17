@@ -1,4 +1,4 @@
-FROM node:23.11.1-alpine3.21
+FROM node:latest
 
 # Run server
 
