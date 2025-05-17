@@ -30,4 +30,4 @@ EXPOSE 30000
 
 USER fvtt
 ENTRYPOINT /opt/foundryvtt/run-server.sh
-CMD ["resources/app/main.mjs" "--dataPath=/data/foundryvtt"]
+CMD ["node resources/app/main.mjs", "--dataPath=/data/foundryvtt"]
