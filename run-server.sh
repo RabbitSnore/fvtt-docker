@@ -1,10 +1,5 @@
 #!/bin/sh
 
-apk add g++ make python3
-cd resources/app
-npm install classic-level --build-from-source
-cd -
-
 # look for a file name foundryvtt-.....zip or FoundryVTT...zip, copy it to 
 # /opt/foundryvtt, unzip and remove it. Then start the foundry app
 
