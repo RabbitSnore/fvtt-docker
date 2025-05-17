@@ -39,11 +39,11 @@ FROM --platform=linux/amd64 amd64/node:23-alpine
 #    chmod -R g+s+rwx /data/foundryvtt && \
 #    chmod -R g+s+rwx /opt/foundryvtt/resources && \
 #    chmod -R g+s+rwx /opt/foundryvtt/resources/app
-#
-#RUN deluser node && \
-#    mkdir -p /opt/foundryvtt/resources/app && \
-#    mkdir /data && \
-#    mkdir /data/foundryvtt
+
+RUN deluser node && \
+    mkdir -p /opt/foundryvtt/resources/app && \
+    mkdir /data && \
+    mkdir /data/foundryvtt
 
 USER root
 RUN chmod -R g+s+rwx /data/foundryvtt && \
