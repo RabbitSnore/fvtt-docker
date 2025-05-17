@@ -1,11 +1,20 @@
 # FROM node:21-alpine
 
-RUN apt-get update && apt-get install -y \
-    software-properties-common \
-    npm
-RUN npm install npm@latest -g && \
-    npm install n -g && \
-    n latest
+ARG NODE_IMAGE_VERSION=22-bookworm-slim
+
+FROM node:${NODE_IMAGE_VERSION} AS compile-typescript-stage
+
+COPY \
+  package.json \
+  package-lock.json \
+  tsconfig.json \
+  ./
+RUN npm install && npm install --global typescript
+COPY /src/*.ts src/
+RUN tsc
+RUN grep -l "#!" dist/*.js | xargs chmod a+x
+
+FROM node:${NODE_IMAGE_VERSION} AS optional-release-stage
 
 # Run server
 
