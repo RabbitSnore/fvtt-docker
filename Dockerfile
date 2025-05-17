@@ -40,7 +40,7 @@ RUN chown -R fvtt:fvtt /data/foundryvtt && \
     chmod -R g+s+rwx /opt/foundryvtt/resources && \
     chmod -R g+s+rwx /opt/foundryvtt/resources/app
 
-USER fvtt
+USER root
 VOLUME /data/foundryvtt
 VOLUME /host
 VOLUME /opt/foundryvtt/resources/app
