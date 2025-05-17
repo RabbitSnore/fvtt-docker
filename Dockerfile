@@ -1,5 +1,4 @@
-FROM --platform=linux/amd64 amd64/node:24-bookworm-slim
-
+FROM --platform=linux/amd64 amd64/node:24-bookworm
 RUN deluser node && \
     mkdir -p /opt/foundryvtt/resources/app && \
     mkdir /data && \
@@ -23,11 +22,10 @@ RUN chown -R fvtt:fvtt /data/foundryvtt && \
     chmod -R a+rwx /opt/foundryvtt/resources && \
     chmod -R a+rwx /opt/foundryvtt/resources/app
 
-USER root
+USER fvtt
 VOLUME /data/foundryvtt
 VOLUME /host
 VOLUME /opt/foundryvtt/resources/app
 EXPOSE 30000
 
-USER fvtt
 ENTRYPOINT /opt/foundryvtt/run-server.sh
