@@ -22,9 +22,7 @@ RUN chown -R fvtt:fvtt /data/foundryvtt && \
     chmod -R a+rwx /opt/foundryvtt/resources && \
     chmod -R a+rwx /opt/foundryvtt/resources/app
 
-RUN apk add g++ make python3
-
-USER root
+USER fvtt
 VOLUME /data/foundryvtt
 VOLUME /host
 VOLUME /opt/foundryvtt/resources/app
