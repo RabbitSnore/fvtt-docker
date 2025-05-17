@@ -1,8 +1,8 @@
 # FROM node:21-alpine
 
-ARG NODE_IMAGE_VERSION=22-alpine
+ARG NODE_IMAGE_VERSION=22-bookworm-slim
 
-FROM node:${NODE_IMAGE_VERSION} AS compile-typescript-stage
+FROM --platform=linux/amd64 amd64/node:${NODE_IMAGE_VERSION} AS compile-typescript-stage
 
 COPY \
   package.json \
