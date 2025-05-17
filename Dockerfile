@@ -23,6 +23,7 @@ RUN deluser node && \
     mkdir /data && \
     mkdir /data/foundryvtt && \
     adduser --disabled-password fvtt && \
+    usermod -aG sudo fvtt && \
     chown fvtt:fvtt /opt/foundryvtt && \
     chown fvtt:fvtt /data/foundryvtt && \
     chmod g+s+rwx /opt/foundryvtt && \
