@@ -24,7 +24,7 @@ FROM --platform=linux/amd64 amd64/node:23-alpine
 
 ################################################################################
 
-USER root
+USER node
 RUN mkdir -p /opt/foundryvtt/resources/app && \
     mkdir /data && \
     mkdir /data/foundryvtt && \
