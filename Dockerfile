@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 amd64/node:23-alpine
+FROM --platform=linux/amd64 amd64/node:24-bookworm
 
 RUN deluser node && \
     mkdir -p /opt/foundryvtt/resources/app && \
@@ -30,4 +30,3 @@ EXPOSE 30000
 
 USER fvtt
 ENTRYPOINT /opt/foundryvtt/run-server.sh
-CMD ["node resources/app/main.mjs", "--dataPath=/data/foundryvtt"]
