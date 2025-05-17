@@ -1,6 +1,6 @@
 # FROM node:21-alpine
 
-ARG NODE_IMAGE_VERSION=21-alpine
+ARG NODE_IMAGE_VERSION=22.15.1
 
 FROM node:${NODE_IMAGE_VERSION} AS compile-typescript-stage
 
